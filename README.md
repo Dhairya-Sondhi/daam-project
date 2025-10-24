@@ -9,6 +9,7 @@ An AI-powered autonomous agent for ENS domain investment analysis with real-time
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green?style=for-the-badge&logo=fastapi)
 ![Web3](https://img.shields.io/badge/Web3.py-6.11-orange?style=for-the-badge&logo=ethereum)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![LangGraph](https://img.shields.io/badge/LangGraph-AI-purple?style=for-the-badge)
 
 </div>
 
@@ -44,19 +45,27 @@ DAAM is an intelligent autonomous agent that analyzes Ethereum Name Service (ENS
 
 ## 🏗️ Architecture
 
-┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ │ │ │ │ │
-│ Next.js │◄────────│ FastAPI │◄────────│ LangGraph │
-│ Dashboard │ SSE │ Backend │ │ Agent │
-│ │ │ │ │ │
-└─────────────────┘ └─────────────────┘ └─────────────────┘
-│ │ │
-│ │ │
-▼ ▼ ▼
-┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ Supabase │ │ Web3.py │ │ OpenAI/ │
-│ Auth & DB │ │ Sepolia │ │ Anthropic │
-└─────────────────┘ └─────────────────┘ └─────────────────┘
+The DAAM system follows a modern three-tier architecture:
+
+### **Frontend Layer**
+- **Next.js 14** with TypeScript and App Router
+- **Server-Sent Events** for real-time updates
+- **Supabase** for authentication and database
+
+### **Backend Layer**
+- **FastAPI** with async/await support
+- **LangGraph** for agent workflow orchestration
+- **Background Tasks** for non-blocking execution
+
+### **AI & Blockchain Layer**
+- **OpenAI/Anthropic** for domain evaluation
+- **Web3.py** for blockchain interaction
+- **Sepolia Testnet** for safe testing
+
+### Data Flow
+User Dashboard → FastAPI Backend → LangGraph Agent → AI Analysis → Blockchain
+↑ ↓
+└─────────── SSE Stream ─────────────┘
 
 text
 
@@ -180,96 +189,159 @@ Frontend runs on `http://localhost:3000`
 The DAAM agent follows this autonomous workflow:
 
 1. **Scan Market** → Discover available ENS domains
-2. **Evaluate Domain** → AI scores based on investment potential
-3. **Assess Risk** → Calculate risk factors
-4. **Make Decision** → Autonomous buy/pass based on threshold
+2. **Evaluate Domain** → AI scores based on investment potential (0-10)
+3. **Assess Risk** → Calculate risk factors and uncertainty
+4. **Make Decision** → Autonomous buy/pass based on threshold (default: 7.0)
 5. **Execute Transaction** → Blockchain purchase (if buy decision)
 6. **Loop** → Continue until all domains processed
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Next.js 14**: React framework with App Router
-- **TypeScript**: Type-safe development
-- **NextAuth.js**: Authentication system
-- **Supabase**: Database and real-time subscriptions
-- **CSS Modules**: Scoped styling
-- **Lucide Icons**: Modern icon library
-- **Server-Sent Events**: Real-time streaming
-
-### Backend
-- **FastAPI**: High-performance Python web framework
-- **LangGraph**: Agent workflow orchestration
-- **LangChain**: LLM integration framework
-- **Web3.py**: Ethereum blockchain interaction
-- **OpenAI/Anthropic**: AI evaluation models
-- **Python-dotenv**: Environment management
-- **Uvicorn**: ASGI server
-
-### Blockchain & Smart Contracts
-- **Sepolia Testnet**: Ethereum test network
-- **ENS Domains**: Ethereum Name Service integration
-- **Smart Contracts**: Solidity-based vault contract
 
 ## 📁 Project Structure
 
 daam-project/
-├── daam-frontend/ # Next.js frontend
-│ ├── app/
-│ │ ├── dashboard/
-│ │ │ ├── page.tsx # Main dashboard with SSE
-│ │ │ └── dashboard.module.css
-│ │ ├── login/ # Authentication pages
-│ │ ├── api/ # API routes
-│ │ └── layout.tsx
-│ ├── components/ # Reusable components
-│ ├── public/ # Static assets
-│ └── package.json
 │
-├── daam-backend/ # FastAPI backend
+├── 📂 daam-frontend/ # Next.js Frontend Application
+│ ├── 📂 app/
+│ │ ├── 📂 dashboard/ # Main dashboard with SSE streaming
+│ │ │ ├── page.tsx # Dashboard component
+│ │ │ └── dashboard.module.css
+│ │ ├── 📂 login/ # Authentication pages
+│ │ ├── 📂 api/ # API routes
+│ │ └── layout.tsx # Root layout
+│ ├── 📂 components/ # Reusable React components
+│ ├── 📂 public/ # Static assets
+│ ├── package.json
+│ └── .env.local.example
+│
+├── 📂 daam-backend/ # FastAPI Backend Application
 │ ├── main.py # FastAPI app with SSE endpoint
 │ ├── agent_logic.py # LangGraph agent workflow
 │ ├── abi.json # Smart contract ABI
-│ └── requirements.txt # Python dependencies
+│ ├── requirements.txt # Python dependencies
+│ └── .env.example
 │
-├── daam-contract/ # Smart contracts
-│ ├── contracts/
-│ └── scripts/
+├── 📂 daam-contract/ # Blockchain Smart Contracts
+│ ├── 📂 contracts/ # Solidity contracts
+│ ├── 📂 scripts/ # Deployment scripts
+│ └── hardhat.config.js
 │
-└── README.md
+├── .gitignore
+├── README.md
+└── package.json
 
 text
 
+## 🛠️ Tech Stack
+
+### Frontend Technologies
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **NextAuth.js** - Authentication system
+- **Supabase** - Database and real-time subscriptions
+- **CSS Modules** - Scoped component styling
+- **Lucide React** - Modern icon library
+- **Server-Sent Events** - Real-time streaming
+
+### Backend Technologies
+- **FastAPI** - High-performance Python web framework
+- **LangGraph** - Agent workflow orchestration
+- **LangChain** - LLM integration framework
+- **Web3.py** - Ethereum blockchain interaction
+- **OpenAI/Anthropic** - AI evaluation models
+- **Python-dotenv** - Environment management
+- **Uvicorn** - ASGI server with auto-reload
+
+### Blockchain & Smart Contracts
+- **Sepolia Testnet** - Ethereum test network
+- **ENS Domains** - Ethereum Name Service
+- **Solidity** - Smart contract language
+- **Hardhat** - Development environment
+
 ## 🔐 Security Best Practices
 
-⚠️ **Never commit these files:**
+⚠️ **Never commit these sensitive files:**
 - `.env` files with actual credentials
 - `node_modules/` directory
 - `venv/` or virtual environment folders
 - Private keys or wallet information
-- API keys (OpenAI, Anthropic, Infura, etc.)
+- API keys (OpenAI, Anthropic, Infura, Alchemy)
+- `.next/` build directory
+- `__pycache__/` Python cache
+
+**Always use `.gitignore`** to exclude sensitive data from your repository.
 
 ## 📊 Real-time Streaming
 
-The dashboard features Server-Sent Events for live updates:
+The dashboard uses Server-Sent Events (SSE) for real-time updates without polling:
 
-### Event Types
-- **`market_scan`**: Domain discovery in progress
-- **`domain_evaluation`**: AI scoring with detailed analysis
-- **`risk_assessment`**: Risk calculation results
-- **`decision`**: Buy/pass recommendations
-- **`transaction`**: Blockchain transaction execution
-- **`agent_complete`**: Workflow completion
+### Event Types Streamed
+
+| Event Type | Description |
+|------------|-------------|
+| `market_scan` | Domain discovery in progress |
+| `domain_evaluation` | AI scoring with detailed analysis |
+| `risk_assessment` | Risk calculation results |
+| `decision` | Buy/pass recommendations |
+| `transaction` | Blockchain transaction execution |
+| `agent_complete` | Workflow completion notification |
+| `heartbeat` | Keep-alive signal |
 
 ### Example Stream Output
 
-[10:30:45] SCANNING MARKET (LIVE) - Found 10 domains
-[10:30:46] Evaluating: trojanfootball.eth
-[10:30:48] Investment Score: 8.5/10 - High brandability
-[10:30:49] Risk Score: 1.5 - Low risk
-[10:30:50] DECISION: Buy recommended
-[10:30:52] Transaction sent: 0x19e831c78bc7...
+[10:30:45] 🔍 SCANNING MARKET (LIVE) - Found 10 domains
+[10:30:46] 📊 Evaluating: trojanfootball.eth
+[10:30:48] 💎 Investment Score: 8.5/10 - High brandability
+[10:30:49] ⚠️ Risk Score: 1.5 - Low risk
+[10:30:50] ✅ DECISION: Buy recommended
+[10:30:52] 🚀 Transaction sent: 0x19e831c78bc7...
 [10:30:54] ✅ Transaction successful! Block: 9277299
+
+text
+
+## 🔧 Configuration
+
+### Agent Configuration
+
+Edit `daam-backend/.env` to customize agent behavior:
+
+Investment threshold (0-10)
+INVESTMENT_THRESHOLD=7.0
+
+Maximum domains to process per run
+MAX_DOMAINS=50
+
+Recursion limit for agent workflow
+RECURSION_LIMIT=50
+
+text
+
+### Frontend Configuration
+
+Edit `daam-frontend/.env.local`:
+
+Backend API endpoint
+NEXT_PUBLIC_API_URL=http://localhost:8000
+
+Enable debug mode
+NEXT_PUBLIC_DEBUG=false
+
+text
+
+## 🧪 Testing
+
+### Backend Testing
+
+cd daam-backend
+pytest tests/
+
+text
+
+### Frontend Testing
+
+cd daam-frontend
+npm run test
+
+or
+yarn test
 
 text
 
@@ -277,49 +349,104 @@ text
 
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Contribution Guidelines
+
+- Follow the existing code style
+- Write tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting PR
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **LangGraph** - Agent workflow orchestration
-- **FastAPI** - High-performance API framework
-- **Next.js** - Modern React development
-- **OpenAI/Anthropic** - AI/LLM capabilities
-- **Web3.py** - Ethereum integration
+- **[LangGraph](https://github.com/langchain-ai/langgraph)** - Agent workflow orchestration
+- **[FastAPI](https://fastapi.tiangolo.com/)** - High-performance API framework
+- **[Next.js](https://nextjs.org/)** - Modern React framework
+- **[OpenAI](https://openai.com/)** / **[Anthropic](https://anthropic.com/)** - AI/LLM capabilities
+- **[Web3.py](https://web3py.readthedocs.io/)** - Ethereum integration
+- **[Supabase](https://supabase.com/)** - Backend-as-a-Service
+- **ENS Community** - For domain inspiration
 
 ## 📧 Contact
 
 **Dhairya Sondhi**
 - GitHub: [@Dhairya-Sondhi](https://github.com/Dhairya-Sondhi)
+- LinkedIn: [Connect with me](https://linkedin.com/in/dhairya-sondhi)
 - Project Link: [https://github.com/Dhairya-Sondhi/daam-project](https://github.com/Dhairya-Sondhi/daam-project)
 
 ## 🗺️ Roadmap
 
+### Phase 1 - Foundation ✅
+- [x] Core agent workflow with LangGraph
+- [x] Real-time SSE streaming
+- [x] Basic dashboard UI
+- [x] Sepolia testnet integration
+
+### Phase 2 - Enhancement 🚧
 - [ ] Multi-chain support (Ethereum mainnet, Polygon, Arbitrum)
 - [ ] Advanced portfolio analytics and performance metrics
 - [ ] Machine learning model improvements
+- [ ] Historical data analysis and trends
+
+### Phase 3 - Expansion 📅
 - [ ] Mobile application (React Native)
 - [ ] Automated trading strategies with backtesting
 - [ ] Community governance features
-- [ ] Historical data analysis and trends
 - [ ] Integration with more LLM providers
+- [ ] Advanced risk modeling
+- [ ] Market prediction algorithms
+
+### Phase 4 - Enterprise 🎯
+- [ ] Multi-user support with role management
+- [ ] White-label solution
+- [ ] API access for third-party integrations
+- [ ] Advanced reporting and analytics
 
 ## 🐛 Known Issues
 
-- Frontend folder may appear as submodule in some Git configurations
-- Ensure all environment variables are properly configured
+- Frontend folder may appear as submodule in some Git configurations (workaround: remove `.git` folder from frontend)
+- Large file warnings for Git pushes (ensure `.gitignore` is properly configured)
+- SSE connection may timeout on slow networks (automatic reconnection implemented)
 
-## ⚡ Performance
+## ⚡ Performance Metrics
 
-- **Agent Processing**: ~10 domains per minute
+- **Agent Processing Speed**: ~10 domains per minute
 - **Real-time Latency**: <100ms for SSE updates
-- **Transaction Confirmation**: 12-15 seconds on Sepolia
-- **Dashboard Load Time**: <2 seconds
+- **Transaction Confirmation**: 12-15 seconds on Sepolia testnet
+- **Dashboard Load Time**: <2 seconds (initial load)
+- **Memory Usage**: ~200MB (backend), ~150MB (frontend)
+
+## 📚 Documentation
+
+For more detailed documentation:
+
+- **[API Documentation](docs/API.md)** - FastAPI endpoints
+- **[Agent Workflow](docs/AGENT.md)** - LangGraph implementation
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Production setup
+- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues
+
+Visit our [Wiki](https://github.com/Dhairya-Sondhi/daam-project/wiki) for complete documentation.
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Dhairya-Sondhi/daam-project&type=Date)](https://star-history.com/#Dhairya-Sondhi/daam-project&Date)
+
+## 💡 Use Cases
+
+- **Domain Investors**: Automate ENS domain discovery and evaluation
+- **Researchers**: Study AI agent behavior and decision-making
+- **Developers**: Learn real-time streaming and blockchain integration
+- **Businesses**: Monitor and acquire valuable digital assets
+
+---
+
+<div align="center">
