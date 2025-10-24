@@ -401,9 +401,6 @@ For more detailed documentation:
 
 Visit our [Wiki](https://github.com/Dhairya-Sondhi/daam-project/wiki) for complete documentation.
 
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Dhairya-Sondhi/daam-project&type=Date)](https://star-history.com/#Dhairya-Sondhi/daam-project&Date)
 
 ## 💡 Use Cases
 
