@@ -1,0 +1,118 @@
+.card {
+  background-color: #060010;
+  border: 1px solid #392e4e;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.tokenInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tokenIcon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #eab308);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.tokenDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.tokenSymbol {
+  color: white;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.tokenName {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.menuButton {
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menuButton:hover {
+  color: white;
+}
+
+.priceSection {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.priceChange {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.priceChangePositive {
+  color: #10b981;
+}
+
+.priceChangeNegative {
+  color: #ef4444;
+}
+
+.chartContainer {
+  height: 4rem;
+  margin-top: 0.5rem;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

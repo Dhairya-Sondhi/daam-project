@@ -1,0 +1,543 @@
+/* Landing Page Container */
+.landingContainer {
+  min-height: 100vh;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headerActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.signInButton {
+  padding: 0.5rem 1.5rem;
+  color: #d1d5db;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.signInButton:hover {
+  color: white;
+}
+
+.getStartedButton {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.getStartedButton:hover {
+  background: linear-gradient(to right, #7c3aed, #db2777);
+  transform: scale(1.05);
+}
+
+/* Main Content */
+.mainContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 64rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.heroTitle {
+  font-size: 3.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.heroTitlePrimary {
+  background: linear-gradient(to right, #ffffff, #e5e7eb, #f3f4f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroTitleSecondary {
+  background: linear-gradient(to right, #a855f7, #ec4899, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.heroHighlight {
+  color: #a855f7;
+  font-weight: 600;
+}
+
+.heroCredit {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-bottom: 3rem;
+}
+
+.heroCreditHighlight {
+  color: #a855f7;
+  font-weight: 600;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.startTradingButton {
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.startTradingButton:hover {
+  background: linear-gradient(to right, #7c3aed, #db2777);
+  transform: scale(1.05);
+}
+
+.viewDemoButton {
+  padding: 1rem 2rem;
+  border: 1px solid #8b5cf6;
+  color: #a855f7;
+  background: transparent;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewDemoButton:hover {
+  background: rgba(139, 92, 246, 0.1);
+  transform: scale(1.05);
+}
+
+/* Carousel Section */
+.carouselSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.carouselViewport {
+  position: relative;
+  height: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.carouselCard {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.carouselCardCenter {
+  z-index: 30;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3), 0 0 50px rgba(236, 72, 153, 0.2);
+}
+
+.carouselCardSide {
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(55, 65, 81, 0.2) 0%, rgba(31, 41, 55, 0.2) 100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.carouselIcon {
+  margin-bottom: 1.5rem;
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carouselCardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.carouselCardDescription {
+  color: #d1d5db;
+  line-height: 1.5;
+}
+
+.sparkleIcon {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  animation: pulse-sparkle 2s infinite;
+}
+
+@keyframes pulse-sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.carouselButton {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carouselButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carouselDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carouselDotActive {
+  background: #a855f7;
+  transform: scale(1.25);
+}
+
+.carouselDotInactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carouselDotInactive:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Globe Section */
+.globeSection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh; /* Only bottom half of screen */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  pointer-events: none;
+  z-index: 1; /* Behind content but above background */
+}
+
+.globeContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.globeGlow {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 150vw;
+  max-width: 2000px;
+  max-height: 2000px;
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.4) 0%,
+    rgba(236, 72, 153, 0.3) 30%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(139, 92, 246, 0.1) 70%,
+    transparent 85%
+  );
+  border-radius: 50%;
+  animation: pulse-glow 4s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+/* Enhanced glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+/* Additional atmospheric layers */
+.globeContainer::before {
+  content: '';
+  position: absolute;
+  bottom: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 120vw;
+  max-width: 1800px;
+  max-height: 1800px;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(139, 92, 246, 0.15) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: pulse-glow 5s ease-in-out infinite reverse;
+  filter: blur(1px);
+}
+
+.globeContainer::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180vw;
+  height: 180vw;
+  max-width: 2400px;
+  max-height: 2400px;
+  background: radial-gradient(
+    circle at center,
+    rgba(236, 72, 153, 0.1) 0%,
+    rgba(139, 92, 246, 0.08) 25%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  animation: pulse-glow 6s ease-in-out infinite;
+  filter: blur(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .globeSection {
+    height: 40vh;
+  }
+  
+  .globeGlow {
+    width: 200vw;
+    height: 200vw;
+    bottom: -60%;
+  }
+  
+  .globeContainer::before {
+    width: 160vw;
+    height: 160vw;
+    bottom: -70%;
+  }
+  
+  .globeContainer::after {
+    width: 240vw;
+    height: 240vw;
+    bottom: -50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .globeSection {
+    height: 35vh;
+  }
+  
+  .globeGlow {
+    width: 250vw;
+    height: 250vw;
+    bottom: -70%;
+  }
+}
+
+
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Light Rays Background */
+.lightRaysBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .heroActions {
+    flex-direction: row;
+  }
+  
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 5rem;
+  }
+  
+  .carouselCard {
+    width: 22rem;
+    height: 22rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .heroSection {
+    padding: 2rem 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+  
+  .carouselCard {
+    width: 18rem;
+    height: 18rem;
+  }
+  
+  .globeContainer {
+    max-width: 20rem;
+    height: 20rem;
+  }
+}
