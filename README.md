@@ -195,40 +195,6 @@ The DAAM agent follows this autonomous workflow:
 5. **Execute Transaction** → Blockchain purchase (if buy decision)
 6. **Loop** → Continue until all domains processed
 
-## 📁 Project Structure
-
-daam-project/
-│
-├── 📂 daam-frontend/ # Next.js Frontend Application
-│ ├── 📂 app/
-│ │ ├── 📂 dashboard/ # Main dashboard with SSE streaming
-│ │ │ ├── page.tsx # Dashboard component
-│ │ │ └── dashboard.module.css
-│ │ ├── 📂 login/ # Authentication pages
-│ │ ├── 📂 api/ # API routes
-│ │ └── layout.tsx # Root layout
-│ ├── 📂 components/ # Reusable React components
-│ ├── 📂 public/ # Static assets
-│ ├── package.json
-│ └── .env.local.example
-│
-├── 📂 daam-backend/ # FastAPI Backend Application
-│ ├── main.py # FastAPI app with SSE endpoint
-│ ├── agent_logic.py # LangGraph agent workflow
-│ ├── abi.json # Smart contract ABI
-│ ├── requirements.txt # Python dependencies
-│ └── .env.example
-│
-├── 📂 daam-contract/ # Blockchain Smart Contracts
-│ ├── 📂 contracts/ # Solidity contracts
-│ ├── 📂 scripts/ # Deployment scripts
-│ └── hardhat.config.js
-│
-├── .gitignore
-├── README.md
-└── package.json
-
-text
 
 ## 🛠️ Tech Stack
 
@@ -324,7 +290,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 Enable debug mode
 NEXT_PUBLIC_DEBUG=false
 
-text
+
 
 ## 🧪 Testing
 
@@ -333,7 +299,6 @@ text
 cd daam-backend
 pytest tests/
 
-text
 
 ### Frontend Testing
 
@@ -343,7 +308,7 @@ npm run test
 or
 yarn test
 
-text
+
 
 ## 🤝 Contributing
 
