@@ -261,7 +261,7 @@ The dashboard uses Server-Sent Events (SSE) for real-time updates without pollin
 [10:30:52] 🚀 Transaction sent: 0x19e831c78bc7...
 [10:30:54] ✅ Transaction successful! Block: 9277299
 
-text
+
 
 ## 🔧 Configuration
 
@@ -278,7 +278,7 @@ MAX_DOMAINS=50
 Recursion limit for agent workflow
 RECURSION_LIMIT=50
 
-text
+
 
 ### Frontend Configuration
 
@@ -310,15 +310,6 @@ yarn test
 
 
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
 
 ### Contribution Guidelines
 
@@ -341,46 +332,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **[Supabase](https://supabase.com/)** - Backend-as-a-Service
 - **ENS Community** - For domain inspiration
 
-## 📧 Contact
-
-**Dhairya Sondhi**
-- GitHub: [@Dhairya-Sondhi](https://github.com/Dhairya-Sondhi)
-- LinkedIn: [Connect with me](https://linkedin.com/in/dhairya-sondhi)
-- Project Link: [https://github.com/Dhairya-Sondhi/daam-project](https://github.com/Dhairya-Sondhi/daam-project)
-
-## 🗺️ Roadmap
-
-### Phase 1 - Foundation ✅
-- [x] Core agent workflow with LangGraph
-- [x] Real-time SSE streaming
-- [x] Basic dashboard UI
-- [x] Sepolia testnet integration
-
-### Phase 2 - Enhancement 🚧
-- [ ] Multi-chain support (Ethereum mainnet, Polygon, Arbitrum)
-- [ ] Advanced portfolio analytics and performance metrics
-- [ ] Machine learning model improvements
-- [ ] Historical data analysis and trends
-
-### Phase 3 - Expansion 📅
-- [ ] Mobile application (React Native)
-- [ ] Automated trading strategies with backtesting
-- [ ] Community governance features
-- [ ] Integration with more LLM providers
-- [ ] Advanced risk modeling
-- [ ] Market prediction algorithms
-
-### Phase 4 - Enterprise 🎯
-- [ ] Multi-user support with role management
-- [ ] White-label solution
-- [ ] API access for third-party integrations
-- [ ] Advanced reporting and analytics
-
-## 🐛 Known Issues
-
-- Frontend folder may appear as submodule in some Git configurations (workaround: remove `.git` folder from frontend)
-- Large file warnings for Git pushes (ensure `.gitignore` is properly configured)
-- SSE connection may timeout on slow networks (automatic reconnection implemented)
 
 ## ⚡ Performance Metrics
 
