@@ -1,0 +1,42 @@
+{
+  "domains": [
+    {
+      "domain": "jakewest.eth",
+      "purchase_price_eth": 0.04,
+      "purchase_date": "2025-09-27T00:08:22.479157",
+      "tx_hash": "4e1ff314796c47abee3a1aeda11391c44ccde6cd50c3b5e5341b345ce2f5943a",
+      "current_value_eth": 0.04
+    },
+    {
+      "domain": "subgenre.eth",
+      "purchase_price_eth": 0.04,
+      "purchase_date": "2025-09-27T00:08:58.814522",
+      "tx_hash": "e4b80480e8ec9c1c07e1d60086c1eea0558bc0cecc0e67ca4a5a942d086c6716",
+      "current_value_eth": 0.04
+    },
+    {
+      "domain": "loganwest.eth",
+      "purchase_price_eth": 0.04,
+      "purchase_date": "2025-09-27T00:09:34.577257",
+      "tx_hash": "01a06d53fef6a750707b382c39e1b692922fd9b20930ef3fafa1b2a0f1aeefe7",
+      "current_value_eth": 0.04
+    },
+    {
+      "domain": "smartunlimitedofthewest.eth",
+      "purchase_price_eth": 0.04,
+      "purchase_date": "2025-09-27T00:10:11.213711",
+      "tx_hash": "8b63189f02b7baaee31eb221b708bab72cf3ae9db8198aec0d731be8d6379cbc",
+      "current_value_eth": 0.04
+    },
+    {
+      "domain": "ai-jobs.eth",
+      "purchase_price_eth": 0.035,
+      "purchase_date": "2025-09-27T00:10:34.425769",
+      "tx_hash": "03a08b6ec25494ddc7e65e2d77cf0e1fcce4854ce2d3f53d464e0017a43897c6",
+      "current_value_eth": 0.035
+    }
+  ],
+  "total_invested": 0.195,
+  "total_value": 0.195,
+  "last_updated": "2025-09-27T00:10:34.425769"
+}
